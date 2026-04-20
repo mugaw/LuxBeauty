@@ -1,4 +1,6 @@
 // Products data - 100+ products across all categories
+import { imagePath } from '@/lib/imagePath';
+
 export interface Product {
   id: number;
   name: string;
@@ -17,13 +19,13 @@ export interface Product {
 }
 
 const images = {
-  hero: '/download/hero-cosmetics.jpg',
-  lipstick: '/download/lipstick-collection.jpg',
-  skincare: '/download/skincare-products.jpg',
-  perfume: '/download/perfume-collection.jpg',
-  tools: '/download/makeup-tools.jpg',
-  editorial: '/download/beauty-editorial.jpg',
-  eyeshadow: '/download/eyeshadow-palette.jpg',
+  hero: imagePath('/download/hero-cosmetics.jpg'),
+  lipstick: imagePath('/download/lipstick-collection.jpg'),
+  skincare: imagePath('/download/skincare-products.jpg'),
+  perfume: imagePath('/download/perfume-collection.jpg'),
+  tools: imagePath('/download/makeup-tools.jpg'),
+  editorial: imagePath('/download/beauty-editorial.jpg'),
+  eyeshadow: imagePath('/download/eyeshadow-palette.jpg'),
 };
 
 // Helper to generate product images based on category

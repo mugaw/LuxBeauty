@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import { imagePath } from '@/lib/imagePath';
 import Image from 'next/image';
 import Navbar from '@/layout/Navbar';
 import Footer from '@/layout/Footer';
@@ -212,7 +213,7 @@ function HeroSection() {
       {/* Background Image with Zoom */}
       <motion.div style={{ scale }} className="absolute inset-0 z-0">
         <Image
-          src="/download/hero-cosmetics.jpg"
+          src={imagePath('/download/hero-cosmetics.jpg')}
           alt="Luxury Cosmetics"
           fill
           className="object-cover"
@@ -345,15 +346,15 @@ function HeroSection() {
 // Categories Section
 function CategoriesSection() {
   const categoryImages: Record<string, string> = {
-    lipsticks: '/download/lipstick-collection.jpg',
-    foundations: '/download/skincare-products.jpg',
-    skincare: '/download/skincare-products.jpg',
-    eyeshadow: '/download/eyeshadow-palette.jpg',
-    perfumes: '/download/perfume-collection.jpg',
-    'makeup-tools': '/download/makeup-tools.jpg',
-    serums: '/download/skincare-products.jpg',
-    'lip-care': '/download/lipstick-collection.jpg',
-    blush: '/download/eyeshadow-palette.jpg',
+    lipsticks: imagePath('/download/lipstick-collection.jpg'),
+    foundations: imagePath('/download/skincare-products.jpg'),
+    skincare: imagePath('/download/skincare-products.jpg'),
+    eyeshadow: imagePath('/download/eyeshadow-palette.jpg'),
+    perfumes: imagePath('/download/perfume-collection.jpg'),
+    'makeup-tools': imagePath('/download/makeup-tools.jpg'),
+    serums: imagePath('/download/skincare-products.jpg'),
+    'lip-care': imagePath('/download/lipstick-collection.jpg'),
+    blush: imagePath('/download/eyeshadow-palette.jpg'),
   };
 
   return (
@@ -621,7 +622,7 @@ function EditorialSection() {
       {/* Background Image */}
       <motion.div style={{ y: y1 }} className="absolute inset-0 z-0">
         <Image
-          src="/download/beauty-editorial.jpg"
+          src={imagePath('/download/beauty-editorial.jpg')}
           alt="Editorial"
           fill
           className="object-cover opacity-20"
@@ -815,9 +816,9 @@ function ParallaxShowcase() {
   const y3 = useTransform(scrollYProgress, [0, 1], [0, -150]);
 
   const showcaseProducts = [
-    { image: '/download/lipstick-collection.jpg', title: 'Lip Collection', subtitle: 'Bold & Beautiful', y: y1 },
-    { image: '/download/skincare-products.jpg', title: 'Skincare', subtitle: 'Radiant Glow', y: y2 },
-    { image: '/download/perfume-collection.jpg', title: 'Fragrance', subtitle: 'Captivating Scent', y: y3 },
+    { image: imagePath('/download/lipstick-collection.jpg'), title: 'Lip Collection', subtitle: 'Bold & Beautiful', y: y1 },
+    { image: imagePath('/download/skincare-products.jpg'), title: 'Skincare', subtitle: 'Radiant Glow', y: y2 },
+    { image: imagePath('/download/perfume-collection.jpg'), title: 'Fragrance', subtitle: 'Captivating Scent', y: y3 },
   ];
 
   return (
@@ -890,12 +891,12 @@ function ParallaxShowcase() {
 // Instagram Gallery
 function InstagramSection() {
   const instagramImages = [
-    '/download/lipstick-collection.jpg',
-    '/download/skincare-products.jpg',
-    '/download/perfume-collection.jpg',
-    '/download/eyeshadow-palette.jpg',
-    '/download/makeup-tools.jpg',
-    '/download/beauty-editorial.jpg',
+    imagePath('/download/lipstick-collection.jpg'),
+    imagePath('/download/skincare-products.jpg'),
+    imagePath('/download/perfume-collection.jpg'),
+    imagePath('/download/eyeshadow-palette.jpg'),
+    imagePath('/download/makeup-tools.jpg'),
+    imagePath('/download/beauty-editorial.jpg'),
   ];
 
   return (
@@ -962,21 +963,21 @@ function TestimonialsSection() {
     {
       name: 'Sarah Mitchell',
       role: 'Beauty Blogger',
-      avatar: '/download/beauty-editorial.jpg',
+      avatar: imagePath('/download/beauty-editorial.jpg'),
       content: 'The quality of LUXE BEAUTY products is unmatched. Every item I\'ve tried has exceeded my expectations. The Velvet Rose Lipstick is my absolute favorite!',
       rating: 5,
     },
     {
       name: 'Emily Chen',
       role: 'Makeup Artist',
-      avatar: '/download/beauty-editorial.jpg',
+      avatar: imagePath('/download/beauty-editorial.jpg'),
       content: 'As a professional makeup artist, I\'m very particular about the products I use. LUXE BEAUTY has become my go-to for both personal and professional use.',
       rating: 5,
     },
     {
       name: 'Alexandra Rose',
       role: 'Skincare Enthusiast',
-      avatar: '/download/beauty-editorial.jpg',
+      avatar: imagePath('/download/beauty-editorial.jpg'),
       content: 'The skincare line transformed my routine completely. The Radiance Facial Oil is pure luxury in a bottle. My skin has never looked better!',
       rating: 5,
     },

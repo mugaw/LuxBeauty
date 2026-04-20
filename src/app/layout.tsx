@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/components/Providers";
+import { imagePath } from "@/lib/imagePath";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   keywords: ["luxury beauty", "cosmetics", "skincare", "makeup", "perfume", "premium beauty", "luxe beauty"],
   authors: [{ name: "LUXE BEAUTY" }],
   icons: {
-    icon: "/download/hero-cosmetics.jpg",
+    icon: imagePath('/download/hero-cosmetics.jpg'),
   },
   openGraph: {
     title: "LUXE BEAUTY - Premium Cosmetics & Skincare",
