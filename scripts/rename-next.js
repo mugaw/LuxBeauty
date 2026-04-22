@@ -30,15 +30,18 @@ if (fs.existsSync(oldPath)) {
   console.log('Renamed _next to next');
 }
 
-// 2. Update all HTML files
+// 2. Update all assets
 const files = getAllFiles(outDir);
 files.forEach(file => {
-  if (file.endsWith('.html')) {
+  if (file.endsWith('.html') || file.endsWith('.js') || file.endsWith('.json')) {
     let content = fs.readFileSync(file, 'utf8');
-    // Replace /_next/ with /next/
-    // We need to be careful with the prefix.
-    // If the path is /LuxBeauty/_next/ -> /LuxBeauty/next/
-    const updatedContent = content.replace(/\/_next\//g, '/next/');
+    // Replace all instances of /_next/ with /next/
+    // We search for /_next/ with various delimiters to be safe
+    const updatedContent = content
+      .replace(/\/_next\//g, '/next/')
+      .replace(/\\\/_next\\\//g, '\\/next\\/')
+      .replace(/%2F_next%2F/g, '%2Fnext%2F');
+
     if (content !== updatedContent) {
       fs.writeFileSync(file, updatedContent);
       console.log(`Updated paths in ${path.relative(outDir, file)}`);
