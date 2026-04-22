@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const outDir = path.join(__dirname, 'out');
+const outDir = path.join(__dirname, '../out');
 
 function getAllFiles(dirPath, arrayOfFiles) {
   const files = fs.readdirSync(dirPath);
