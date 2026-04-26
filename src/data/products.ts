@@ -1,4 +1,3 @@
-// Products data - 100+ products across all categories
 import { imagePath } from '@/lib/imagePath';
 
 export interface Product {

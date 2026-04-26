@@ -167,7 +167,7 @@ export default function Home() {
   );
 }
 
-// Pre-generated particle positions (deterministic to avoid hydration mismatch)
+// Pre-generated particle positions
 const particlePositions = [
   { left: 12.5, top: 25.3, duration: 6.2, delay: 0.5 },
   { left: 45.8, top: 67.1, duration: 7.4, delay: 1.2 },
